@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <title>Sistema RT</title>
 </head>
 
@@ -18,7 +21,7 @@
 
         <header>
 
-            <img src="./IMGS/logo.png" alt="logo">
+            <img src="./IMGS/logo2.png" alt="logo">
 
             <h1>
                 REGISTRO DE RESPONSABILIDADE TÉCNICA
@@ -30,9 +33,37 @@
         <main>
 
             <div class="cards">
+                
 
-                <div class="card bg1">Concessão
+                <div class="card bg1">
+                    
+                <img src="./IMGS/icone1.png" alt="icone lapis">
+                
+                
+                <H2>SOLICITAR
+                    CONCESSÃO
 
+                </H2>
+
+
+                    <button>
+                        <a href="">
+                                    
+                        ACESSAR
+                        </a>
+                    </button>
+
+
+
+                </div>
+                <div class="card bg2">
+
+                <img src="./IMGS/icone2.png" alt="icone lapis">
+
+                <h2>
+                SOLICITAR
+                RENOVAÇÃO
+                </h2>
 
                     <button>
                         ACESSAR
@@ -41,17 +72,15 @@
 
 
                 </div>
-                <div class="card bg2">Renovação
+                <div class="card bg1">
 
 
-                    <button>
-                        ACESSAR
-                    </button>
+                <img src="./IMGS/icone3.png" alt="icone lapis">
 
-
-
-                </div>
-                <div class="card bg1">Cancelamento
+                    <h2>
+                    SOLICITAR
+                    CANCELAMENTO
+                    </h2>
 
                     <button>
                         ACESSAR
@@ -59,7 +88,15 @@
 
 
                 </div>
-                <div class="card bg2">Consultar
+                <div class="card bg2">
+
+                <img src="./IMGS/icone4.png" alt="icone lapis">
+
+
+                    <h2>
+                    CONSULTAR
+                    REQUERIMENTO
+                    </h2>
 
                     <button>
                         ACESSAR
