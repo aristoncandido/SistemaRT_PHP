@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Sistema RT</title>
 </head>
 
@@ -21,94 +22,140 @@
 
         <header>
 
-            <img src="./IMGS/logo2.png" alt="logo">
+       
 
-            <h1>
-                REGISTRO DE RESPONSABILIDADE TÉCNICA
-            </h1>
+
+            <div class="title">     
+                
+            <div class="logo">   
+                       <img src="./IMGS/logo2.png" alt="logo">
+
+            </div>
+
+                       
+
+                            <h1>
+                                REGISTRO DE RESPONSABILIDADE TÉCNICA
+                            </h1>
+
+                            <h3>O que você deseja fazer hoje ?</h3>
+
+
+            </div>
+          <!--      <img class="elemento-azul" src="IMGS\19007.jpg" alt="">
+
+        -->
 
 
         </header>
 
         <main>
+          <div >
+                <img class="nurse" src="IMGS\nurse.png" alt="oi">
+
+            </div><!-- div da img -->
+        
 
             <div class="cards">
                 
 
-                <div class="card bg1">
-                    
-                <img src="./IMGS/icone1.png" alt="icone lapis">
-                
-                
-                <H2>SOLICITAR
-                    CONCESSÃO
-
-                </H2>
-
-
-                    <button>
-                        <a href="">
+                                    <div class="card bg1">
+                                        
+                                    <img src="./IMGS/icone1.png" alt="icone lapis">
                                     
-                        ACESSAR
-                        </a>
-                    </button>
+                                    <span>É sua primeira vez?</span>
+                                    <H2>SOLICITAR
+                                        INSCRIÇÃO
+
+                                    </H2>
+
+
+                                        <button>
+                                            <a href="">
+                                                        
+                                            ACESSAR
+                                            </a>
+                                        </button>
 
 
 
-                </div>
-                <div class="card bg2">
+                                    </div>
+                                    <div class="card bg2">
 
-                <img src="./IMGS/icone2.png" alt="icone lapis">
+                                    <img src="./IMGS/icone2.png" alt="icone lapis">
 
-                <h2>
-                SOLICITAR
-                RENOVAÇÃO
-                </h2>
+                                    <span>Gostaria de Atualizar?</span>
 
-                    <button>
-                        ACESSAR
-                    </button>
+                                    <h2>
+                                    SOLICITAR
+                                    RENOVAÇÃO
+                                    </h2>
 
-
-
-                </div>
-                <div class="card bg1">
+                                        <button>
+                                            ACESSAR
+                                        </button>
 
 
-                <img src="./IMGS/icone3.png" alt="icone lapis">
 
-                    <h2>
-                    SOLICITAR
-                    CANCELAMENTO
-                    </h2>
-
-                    <button>
-                        ACESSAR
-                    </button>
+                                    </div>
+                                    <div class="card bg1">
 
 
-                </div>
-                <div class="card bg2">
-
-                <img src="./IMGS/icone4.png" alt="icone lapis">
+                                    <img src="./IMGS/icone3.png" alt="icone lapis">
 
 
-                    <h2>
-                    CONSULTAR
-                    REQUERIMENTO
-                    </h2>
 
-                    <button>
-                        ACESSAR
-                    </button>
+                                    <span>Deseja encerrar?</span>
 
-                </div>
+                                        <h2>
+                                        SOLICITAR
+                                        CANCELAMENTO
+                                        </h2>
 
-            </div>
+                                        
+
+                                        <button>
+                                            ACESSAR
+                                        </button>
+
+
+                                    </div>
+                                    <div class="card bg2">
+
+                                    <img src="./IMGS/icone4.png" alt="icone lapis">
+
+                                    <span>Deseja acompanhar?</span>
+
+                                        <h2>
+                                        CONSULTAR
+                                        REQUERIMENTO
+                                        </h2>
+
+                                        <button>
+
+                                        <a href="consulta_requerimento.php">
+
+                                        ACESSAR
+
+                                        </a>
+                                            
+                                        </button>
+
+                                    </div>
+
+            </div> <!-- Main CARDS -->
 
 
 
         </main>
+
+
+        <div class="bg-fundo">
+        
+        </div>
+
+
+
 
 
     </div>

@@ -8,14 +8,24 @@
         exit();
     }
     
+    if($_SERVER[REQUEST_METHOD]=="POST"){
+
+        //valida os campos do formulario
+
+
+                
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $senha = $_POST['senha'];
+            
+        
+
+
+    }
 
 
 
 
 
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    
 
     include 'conexao.php';
 

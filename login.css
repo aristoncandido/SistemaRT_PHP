@@ -1,5 +1,6 @@
 *{
     font-family: 'Poppins';
+    color: black;
 }
 
 body{
@@ -17,10 +18,8 @@ h1{
     height: 100%;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+    justify-content: end;
+    
 
 
 }
@@ -28,11 +27,12 @@ h1{
 
 .logar{
 
-    height: 50%;
-    width: 30%;
-    background-color:#001c79;
+    height: 100%;
+    width: 40%;
+    background-color: #005EA1;
+
     color: white;
-    border-radius: 15pt;
+
     display: flex;
     justify-content: center;
     padding-top: 5%;
@@ -48,6 +48,7 @@ form{
         flex-direction: column;
         justify-content: space-evenly;
         height: 50%;
+        color: white;
             
 
 }
@@ -55,4 +56,14 @@ form{
 input{
 
 
+}
+
+
+.block1{
+    width: 70%;
+    text-align: center;
+    height: 100%;
+
+    padding-top: 5%;
+    color: #0379CE;
 }
