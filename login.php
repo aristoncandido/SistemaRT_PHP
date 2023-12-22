@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-   
+    <link rel="shortcut icon" href="IMGS\icone.png" type="image/x-icon">
     <title>Login Gerencial</title>
 </head>
 
@@ -19,15 +19,19 @@
     <div class="conteiner"> 
         <div class="block1">   
 
-        
-                <h1>Login Gerencial</h1>
+                <div >
+                       <img src="IMGS\wave.png" alt="">
+                            
+                          <h1>Login Gerencial</h1>
+                </div>
                 
-
+<!-- 
                 <h2>
                     Acesse aqui o sistema gerenciador do RT
                 </h2>
+ -->
 
-
+                <img src="IMGS\logo2.png" alt="">
 
             
 
@@ -47,20 +51,32 @@
              
 
                     <p>Email</p>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" placeholder="email@exemplo.com">
                     <p>Senha</p>
-                    <input type="password" name="senha" id="senha">
-                    <button>Entrar</button>
+                    <input  type="password" name="senha" id="senha"  placeholder="*******">
+                    <button  class="btn" >Entrar</button>
+                    <button  class="btn" >Cadastrar</button>
 
 
 
                 </form>
 
+        
+
 
             </div>
 
 
+
+       
+
+
         </div>
+
+
+
+
+
 
 
     </div>
