@@ -3,7 +3,22 @@
     session_start();
 
 
-    if (isset($_SESSION['user_id'])) {
+    if(empty($_POST) or (empty($_POST["email"]) or (empty($_POST["senha"])))){
+
+        print'<script>location.href="index.php";</script>'
+
+
+
+    }
+
+
+
+
+
+
+
+
+  /*   if (isset($_SESSION['user_id'])) {
         header("Location: pagina_restrita.php");
         exit();
     }
@@ -62,4 +77,4 @@
 
 
 
-?>
+?> */

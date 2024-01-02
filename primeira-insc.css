@@ -1,0 +1,46 @@
+*{
+
+}
+body{
+    background-color: #005EA1;
+}
+header{
+    display:block;
+    height: 15%;
+    padding-bottom: 5%;
+    background-color: white;
+    background: transparent;
+}
+
+.passo-a-passo{
+
+    position:relative;
+
+    height:33.625rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    color: white;
+
+}
+.guia{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.passo-a-passo a{
+    color: #ffff;
+    background-color: #4db5ff;
+    padding: 1%;
+    border-radius: 2%;
+    text-align: center;
+    
+    margin: 1% auto;
+    width: 15rem ;
+}
