@@ -11,6 +11,20 @@
 
     }
 
+    include('conexao.php');
+
+
+    $usuario = $_POST["email"];
+    $senha = $_POST["senha"];
+
+
+
+    $sql = "SELECT * FROM user 
+            WHERE user = '{$usuario}'  
+            AND senha = '{$senha}'";
+
+    $res = $conn->query();
+
 
 
 
