@@ -1,94 +1,41 @@
 <?php
+session_start();
 
-    session_start();
+if (empty($_POST) or empty($_POST["email"]) or empty($_POST["senha"])) {
+    header("Location: index.php");
+    exit();
+}
 
+include('conexao.php');
 
-    if(empty($_POST) or (empty($_POST["email"]) or (empty($_POST["senha"])))){
+$usuario = $_POST["email"];
+$senha = $_POST["senha"];
 
-        print'<script>location.href="index.php";</script>'
+// Utilizando prepared statements para evitar SQL injection
+$sql = "SELECT * FROM user WHERE email = ? AND senha = ?";
+$stmt = $conn->prepare($sql);
 
+// Verifica se a preparação da declaração foi bem-sucedida
+if (!$stmt) {
+    die("Erro na preparação da declaração: " . $conn->error);
+}
 
+$stmt->bind_param("ss", $usuario, $senha);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    }
+$row = $result->fetch_object();
+$qtd = $result->num_rows;
 
-    include('conexao.php');
-
-
-    $usuario = $_POST["email"];
-    $senha = $_POST["senha"];
-
-
-
-    $sql = "SELECT * FROM user 
-            WHERE user = '{$usuario}'  
-            AND senha = '{$senha}'";
-
-    $res = $conn->query();
-
-
-
-
-
-
-
-
-  /*   if (isset($_SESSION['user_id'])) {
-        header("Location: pagina_restrita.php");
-        exit();
-    }
-    
-    if($_SERVER[REQUEST_METHOD]=="POST"){
-
-        //valida os campos do formulario
-
-
-                
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $senha = $_POST['senha'];
-            
-        
-
-
-    }
-
-
-
-
-
-
-    include 'conexao.php';
-
-
-    $sql="SELECT*FROM USER WHERE EMAIL='$email' AND SENHA ='$senha' ";
-    
-
-
-
-
-    $result = $conn->query($sql);         //pega o retorno da requisição}
-    $nome_sql = "SELECT NOME FROM USER WHERE EMAIL='$email' AND SENHA ='$senha' ";
-    $result_nome = $conn ->query($nome_sql);
- 
-
-
-    if ($result) {
-        // Verifica se há um registro correspondente
-        if ($result->num_rows > 0) {
-            // Login bem-sucedido
-            echo "Logado com $result_nome";
-            // Você pode redirecionar o usuário ou realizar outras ações aqui
-        } else {
-            // Credenciais inválidas
-            echo "Credenciais inválidas. Tente novamente.";
-        }
-    } else {
-        // Erro na consulta
-        echo "Erro na consulta: " . $conn->error;
-    }
-    
-
-
-
-
-
-?> */
+if ($qtd > 0) {
+    $_SESSION["usuario"] = $usuario;
+    $_SESSION["nome"] = $row->nome;
+    $_SESSION["funcao"] = $row->funcao;
+    header("Location: manager.php");
+    exit();
+} else {
+    echo "<script>alert('Usuário e/ou senha incorreta');</script>";
+    header("Location:login.php;");
+    exit();
+}
+?>

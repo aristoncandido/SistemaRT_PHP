@@ -134,6 +134,10 @@ h2{
 
 @media screen and (max-width:700px){
 
-    .container{} 
+    .conteiner{
+
+        display: flex;
+        flex-direction: column;
+    } 
     
 }
