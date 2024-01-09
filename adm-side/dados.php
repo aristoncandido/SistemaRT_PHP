@@ -2,7 +2,7 @@
 session_start();
 
 if (empty($_POST) || empty($_POST["email"]) || empty($_POST["senha"])) {
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -12,7 +12,8 @@ $usuario = $_POST["email"];
 $senha = $_POST["senha"];
 
 // Utilizando prepared statements para evitar SQL injection
-$sql = "SELECT * FROM user WHERE email = ?";
+$sql = "SELECT * FROM user WHERE EMAIL = '$usuario'";
+
 $stmt = $conn->prepare($sql);
 
 // Verifica se a preparação da declaração foi bem-sucedida

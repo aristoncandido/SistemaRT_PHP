@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="IMGS\icone.png" type="image/x-icon">
-    <title>Login Gerencial</title>
+    <link rel="shortcut icon" href="\Sistema RT\IMGS\icone.png" type="image/x-icon">
+   <title>Login Gerencial</title>
 </head>
 
 <body>
@@ -55,7 +55,7 @@
                     <p>Senha</p>
                     <input  type="password" name="senha" id="senha"  placeholder="*******">
                     <button  class="btn" >Entrar</button>
-                    <button  class="btn" >Cadastrar</button>
+                    <button  class="btn" ><a href="cadastrar.php">Cadastrar</a></button>
 
 
 

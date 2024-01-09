@@ -143,4 +143,7 @@ h2{
 }
 
 
-@s
+a{
+    color: white;
+    text-decoration: none;
+}
