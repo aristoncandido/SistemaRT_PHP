@@ -1,21 +1,16 @@
 <?php
 
+// Inicie a sessão no início do arquivo
+session_start();
 
+// Encerre a sessão
+session_unset();
+session_destroy();
 
-
-    session_start();
-    unset($_SESSION["usuario"]);
-    unset($_SESSION["nome"]);
-    unset($_SESSION["funçao"]);
-
-    session_destroy();
-
-
-
-    header("Location: login.php");
-    exit;
-
-
+// Redirecione para a página de login
+header("Location: dados.php");
+exit();
+?>
 
 
 

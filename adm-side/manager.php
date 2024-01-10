@@ -7,25 +7,23 @@
 </head>
 <body>
 
+<?php
+    session_start();
 
+ ;
 
+    if(isset($_SESSION['usuario_id']))
 
+    echo '<p>Bem-vindo ' . $NOME . '</p>';
+?>
 
 <div class="conteiner">
-  
-
-
- <div>
-    <p>
-        Bem Vindo 
-    </p>
- </div>
-
-  
-
-
-
+    <div>
+        <p>
+            
+        </p>
+    </div>
 </div>
-    
+
 </body>
 </html>

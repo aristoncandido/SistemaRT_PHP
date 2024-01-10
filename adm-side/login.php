@@ -46,7 +46,7 @@
             <div class="login">  
            
 
-                <form action="dados.php" method="post">
+                <form action="dados.php" method="POST">
 
              
 
@@ -54,7 +54,7 @@
                     <input type="email" name="email" id="email" placeholder="email@exemplo.com">
                     <p>Senha</p>
                     <input  type="password" name="senha" id="senha"  placeholder="*******">
-                    <button  class="btn" >Entrar</button>
+                    <button  id="login" class="btn" >Entrar</button>
                     <button  class="btn" ><a href="cadastrar.php">Cadastrar</a></button>
 
 
@@ -80,6 +80,9 @@
 
 
     </div>
+
+    <script src="login.js"></script>
+
 
 
 

@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro de conexão: " . $conn->connect_error);
     }
 
-    // Prepara a declaração SQL
-    $sql = "INSERT INTO user (NOME, EMAIL, DEPARTAMENTO, TIPO_DE_PERFIL, SENHA) VALUES ('$nome', '$email', '$departamento', '$tipo_perfil', '$senha')";
+    // Prepara a declaração SQL com placeholders
+    $sql = "INSERT INTO user (NOME, EMAIL, DEPARTAMENTO, TIPO_DE_PERFIL, SENHA) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     // Verifica se a preparação da declaração foi bem-sucedida
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Redireciona para uma página de sucesso (substitua "sucesso.php" conforme necessário)
-    echo "<script>alert('Usuário cadastrado com sucesso!'); window.location='manager.php';</script>";
+    echo "<script>alert('Usuário cadastrado com sucesso!'); window.location='login.php';</script>";
     exit();
 } else {
     // Se o formulário não foi enviado, redireciona para a página de cadastro
