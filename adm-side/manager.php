@@ -72,7 +72,11 @@
         color:white;
     }
 
-    .logout{^
+    .logout{
+
+        width:5%;
+
+
     }
 
 </style>
@@ -148,8 +152,10 @@
 
 
 <div class="logout">
-    <input type="button" value="Sair">
+    <a href="Sistema RT\adm-side\logout.php"> <input type="button" value="Sair" href="" >
+ </a>
 
+    
 </div>
  
 </body>

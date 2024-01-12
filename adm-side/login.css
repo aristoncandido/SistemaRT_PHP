@@ -6,8 +6,40 @@
 
 body{
     height: 100vh;
+    width: 100%;
+   
+
+
+
     
 }
+
+#logo{
+    position: relative;
+ 
+    width: 380px;
+
+    top: -10%;
+
+    z-index: 1;
+
+
+}
+
+
+
+#fundo{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+
+}
+
+
+
+
 h1{
     color: #001c79;
 }
@@ -19,32 +51,42 @@ h1{
     height: 100%;
 
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 
 
 }
 
 
+
+
+
 .logar{
 
-    height: 100%;
-    width: 40%;
-    background-color: #005EA1;
+    height: 50%;
 
-    color: white;
-
+    width: 20%;
+    background-color: whitesmoke;
+    color: black;
     display: flex;
     justify-content: center;
     padding-top: 5%;
+  
+    border-radius: 15pt;
+
 
 
 }
 
+
+
 .login{     
 
 
-    width: 40%;
+    width: 70%;
+    height: 90%;
 
 }
 
@@ -53,10 +95,10 @@ form{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 40%;
+        height: 70%;
         font-size: 20pt;
-        color: white;
-        transform: translateY(60%);
+        color: rgb(8, 0, 77);
+    
        
             
 
@@ -69,11 +111,12 @@ input{
     padding-left: 2%;
 
 
+
 }
 
 button{
     margin: 0 auto;
-    width: 60%;
+    width: 100%;
     padding: 3%;
     
     color: white;
@@ -111,8 +154,14 @@ button:hover{
     color: #0379CE;
 }
 h2{
-    font-size: 35pt;
-    color: white;
+   
+    color: #001c79;
+    font-size: 20px;
+    position: relative;
+    top:-5%;
+    text-align: center;
+   
+
 }
 
 .block1 img{
@@ -122,6 +171,8 @@ h2{
 }
 
 .block1 div img{
+
+
 
     position: relative;
     z-index: -99;
@@ -144,6 +195,19 @@ h2{
 
 
 a{
+
+
     color: white;
     text-decoration: none;
+
+
+
+
+}
+
+
+p{
+
+    font-size: 1rem;
+
 }
