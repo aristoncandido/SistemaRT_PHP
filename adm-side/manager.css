@@ -1,0 +1,173 @@
+*{
+
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+
+}
+
+
+
+body{
+    background:#005EA1;
+    overflow-x:hidden;
+    width: 100%;
+    height: 100vh;
+
+
+
+
+}
+
+  .conteiner{
+
+       
+        width: 100%;
+        height: 100%;
+        display: block;
+
+    }
+
+
+header{
+
+
+    width:100%;
+    background:#001757;
+    display:flex;
+    height: 20%;
+    justify-content: space-evenly;
+    color: white;
+    margin-bottom: 2%;
+
+    
+
+}
+
+
+
+header div {
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+
+
+
+header div h1{
+    color: white;
+    
+}
+
+h2{
+    font-size:20pt;
+}
+
+h1{
+    color:white;
+}
+
+
+button {
+    color: #001c79;
+    min-height: 80px;
+    width: 160px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e81c;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    border: 1px solid white;
+  }
+  
+  button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  }
+  
+
+
+label{
+
+    color:white;
+    margin-right: 2%;
+    padding-top: 2px;
+}
+
+.logout{
+
+    width:5%;
+
+
+}
+
+
+.block-left{
+
+display: flex;
+width: 100%;
+justify-content: space-around;
+}
+
+
+
+.card{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg{
+
+    width: 128px;
+    height: 128px;
+    margin-bottom: 5%;
+}
+
+
+#pesquisa {
+    max-width: 190px;
+    background-color: #f5f5f5;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+  }
+  
+  #pesquisa:focus {
+    border-bottom: 2px solid #5b5fc7;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  #pesquisa:hover {
+    outline: 1px solid lightgrey;
+  }
+
+  select{
+    border-radius: 4px;
+    min-height: 40px;
+
+  }
+
+
+  .btn-pesquisa{
+
+    min-height: 40px;
+    width: 100px;
+    font-size: medium;
+    text-align: center;
+    border-radius: 4px;
+
+
+  }
