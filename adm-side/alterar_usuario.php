@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store" />
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="cadastrar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,9 +51,9 @@ if ($conn->connect_error) {
 
 
             
-        // Consulta ao banco de dados para obter informações do usuário (substitua pela sua lógica)
-        $usuario_id = intval($_GET['id']);
-        $sql = "SELECT nome, email, departamento, tipo_de_perfil , senha FROM user WHERE id = $ID";
+        // Consulta ao banco de dados para obter informações do usuário
+        $usuario_id = intval($_GET['ID']);
+        $sql = "SELECT nome, email, departamento, tipo_de_perfil , senha FROM user WHERE id = $usuario_id";
         $result = $conn->query($sql);
 
 
@@ -93,7 +94,7 @@ if ($conn->connect_error) {
 <div class="conteiner">
     <h2>Alteração de cadastro</h2>
 
-    <form action="processar_cadastro.php" method="get">
+    <form action="processar_cadastro.php" method="post">
         <!-- Campos do formulário -->
 
         <label for="nome">Nome:</label>
@@ -105,31 +106,34 @@ if ($conn->connect_error) {
         <br>
 
         <label for="departamento">Departamento:</label>
-        <select id="departamento" name="departamento" required>
-            <option value="registro">RT</option>
-            <option value="ti">TI</option>
+        <select id="departamento" name="departamento" required   value="<?php echo  $departamento?>"      >
+                 <option value="registro" <?php echo ($departamento == 'registro') ? 'selected' : ''; ?>>RT</option>
+                 <option value="ti" <?php echo ($departamento == 'ti') ? 'selected' : ''; ?>>TI</option>
         </select>
         <br>
 
         <label for="tipo_perfil">Categoria de Perfil:</label>
-        <select name="tipo_perfil" id="tipo_perfil">
-            <option value="administrador">ADMINISTRADOR</option>
-            <option value="gerenciador">GERENCIADOR</option>
+        <select id="tipo_perfil" name="departamento" required>
+                    <option value="administrador"   <?php echo ($tipo_perfil == 'administrador') ? 'selected' : '' ; ?>     >           ADMINISTRADOR </option>
+                    <option value="gerenciador"     <?php echo ($tipo_perfil == 'gerenciador'  ) ? 'selected' : '' ; ?>     >             GERENCIADOR   </option>
         </select>
         <br>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required value="<?php $senha?>">
+        <label for="senha">Nova Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Deixe em branco para manter a mesma senha">
         <br>
 
         <label for="confirma_senha">Confirmação de Senha:</label>
-        <input type="password" id="confirma_senha" name="confirma_senha" required value="<?php $senha?>">
+        <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Deixe em branco para manter a mesma senha">
         <br>
 
         <!-- Adicionada validação para verificar se a senha e a confirmação coincidem -->
         <span id="senha-erro" style="color: red; background-color:white; margin-bottom:5%;"></span>
         <script>
             function validarFormulario() {
+
+
+
                 let nome = document.getElementById('nome').value;
                 let email = document.getElementById('email').value;
                 let departamento = document.getElementById('departamento').value;
@@ -172,7 +176,7 @@ if ($conn->connect_error) {
         <!-- Fim da validação -->
 
         <button type="submit" id="btn-cadastrar" disabled>Alterar</button>
-         <button type="button"><a href="listar_usuarios.php" id="btn-cancelar"> Cancelar    </a></button>
+        <button type="button"><a href="listar_usuarios.php" id="btn-cancelar"> Cancelar </a></button>
   
                
             
