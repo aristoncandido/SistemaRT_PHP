@@ -60,6 +60,7 @@ if ($conn->connect_error) {
       
 
         if ($result->num_rows > 0) {
+
             $row = $result->fetch_assoc();
             $nome = $row["nome"];
             $email = $row["email"];
@@ -113,78 +114,63 @@ if ($conn->connect_error) {
         <br>
 
         <label for="tipo_perfil">Categoria de Perfil:</label>
-        <select id="tipo_perfil" name="departamento" required>
+        <select id="tipo_perfil" name="tipo_perfil" required>
                     <option value="administrador"   <?php echo ($tipo_perfil == 'administrador') ? 'selected' : '' ; ?>     >           ADMINISTRADOR </option>
                     <option value="gerenciador"     <?php echo ($tipo_perfil == 'gerenciador'  ) ? 'selected' : '' ; ?>     >             GERENCIADOR   </option>
         </select>
         <br>
 
         <label for="senha">Nova Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Deixe em branco para manter a mesma senha">
+        <input type="password" id="senha" name="senha" placeholder="Deixe em branco para manter a mesma senha"  value="<?php echo $senha?>">
         <br>
 
         <label for="confirma_senha">Confirmação de Senha:</label>
-        <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Deixe em branco para manter a mesma senha">
+        <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Deixe em branco para manter a mesma senha" value="<?php echo $senha?>">
         <br>
 
         <!-- Adicionada validação para verificar se a senha e a confirmação coincidem -->
         <span id="senha-erro" style="color: red; background-color:white; margin-bottom:5%;"></span>
         <script>
-            function validarFormulario() {
+
+                                    <?php        //Alteração de Usuário
+
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        // Verifica se o formulário foi enviado via POST
+
+                                        // Campos do formulário
+                                        $novoNome = $_POST['nome'];
+                                        $novoEmail = $_POST['email'];
+                                        $novaSenha = $_POST['senha'];
+                                        $novoDepartamento = $_POST['departamento'];
+                                        $novoTipoPerfil = $_POST['tipo_perfil'];
+
+                                        // Query SQL para atualizar os dados
+                                        $sql = "UPDATE user SET nome = '$novoNome', email = '$novoEmail', senha = '$novaSenha', departamento = '$novoDepartamento', tipo_de_perfil = '$novoTipoPerfil' WHERE id = $usuario_id";
+
+                                        // Executa a query de atualização
+                                        if ($conn->query($sql) === TRUE) {
+                                            echo '<script>alert("Dados atualizados com sucesso!")</script>';
+                                        } else {
+                                            echo '<script>alert("Erro ao atualizar dados: ' . $conn->error . '")</script>';
+                                            echo $sql;
+                                        }
+                                    }
+                                        
+
+                                    ?>
 
 
 
-                let nome = document.getElementById('nome').value;
-                let email = document.getElementById('email').value;
-                let departamento = document.getElementById('departamento').value;
-                let tipoPerfil = document.getElementById('tipo_perfil').value;
-                let senha = document.getElementById('senha').value;
-                let confirmaSenha = document.getElementById('confirma_senha').value;
-                let senhaErro = document.getElementById('senha-erro');
-                let botaoCadastrar = document.getElementById('btn-cadastrar');
-
-                if (nome && email && departamento && tipoPerfil && senha && confirmaSenha && senha === confirmaSenha) {
-                    senhaErro.textContent = '';
-                    botaoCadastrar.disabled = false;
-                    
-
-
-
-                } else {
-                    senhaErro.textContent = 'Por favor, preencha todos os campos corretamente.';
-                  
-
-                    
-                    botaoCadastrar.disabled = true;
-                }
-            }
-
-            document.getElementById('senha').addEventListener('input', validarFormulario);
-            document.getElementById('confirma_senha').addEventListener('input', validarFormulario);
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+           
       
         </script>
         <!-- Fim da validação -->
 
-        <button type="submit" id="btn-cadastrar" disabled>Alterar</button>
+        <button type="submit" id="btn-cadastrar" >Alterar</button>
+     
         <button type="button"><a href="listar_usuarios.php" id="btn-cancelar"> Cancelar </a></button>
   
-               
-            
-   
-           
-            
-         
-
+      
         <!-- Botão de Cancelar -->
         
     </form>

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store" />
+
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,10 +54,7 @@
         </header>
 
         <main>
-          <div >
-                <img class="nurse" src="IMGS\nurse.png" alt="oi">
-
-            </div><!-- div da img -->
+       
         
 
             <div class="cards">
