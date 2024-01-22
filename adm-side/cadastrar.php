@@ -13,6 +13,52 @@
     <title>Cadastro Administrativo</title>
 </head>
 <body>
+
+<?php
+    
+
+    
+    session_start();
+
+     // Verifique se o usuário está autenticado
+     if (!isset($_SESSION['usuario_id'])) {
+        // Se não estiver autenticado, redirecione para a página de login
+        header("Location: dados.php");
+
+
+
+                
+
+        exit();
+
+
+ 
+    }
+
+
+    $sql= "SELECT * FROM user WHERE tipo_de_perfil = 'ADMINISTRADOR' AND status  = '1' ";
+
+    $result = $conn ->query($sql);
+
+    if($result -> num_rows > 0){
+
+        echo 'Usuário pode mudar configurações';
+    }else{
+
+
+
+        header("Location: erro-permissao");
+
+    }
+
+
+    $conn-> close();
+
+
+
+    
+
+?>
  
 <div class="conteiner">
     <h2>Cadastro Administrativo</h2>

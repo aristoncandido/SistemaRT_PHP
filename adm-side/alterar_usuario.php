@@ -56,6 +56,9 @@ if ($conn->connect_error) {
         $sql = "SELECT nome, email, departamento, tipo_de_perfil , senha FROM user WHERE id = $usuario_id";
         $result = $conn->query($sql);
 
+        
+
+
 
       
 
