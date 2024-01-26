@@ -32,17 +32,20 @@
             <div class="title">     
                 
             <div class="logo">   
-                       <img src="./IMGS/logo2.png" alt="logo">
+                       <img src="./IMGS/logo.png" alt="logo">
 
             </div>
 
                        
 
-                            <h1>
+                          <!--   <h1>
                                 REGISTRO DE RESPONSABILIDADE TÉCNICA
-                            </h1>
+                            </h1> -->
+                            <br>
+                            <br>
+                            <br>
 
-                            <h3>O que você deseja fazer hoje ?</h3>
+                            <h2>O que você deseja fazer hoje ?</h2>
 
 
             </div>
@@ -147,12 +150,13 @@
             </div> <!-- Main CARDS -->
 
 
-
+          
         </main>
 
 
         <div class="bg-fundo">
-        
+        <img style=" "src="./IMGS/blue.png" alt="" srcset="">
+
         </div>
 
 

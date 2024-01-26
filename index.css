@@ -3,14 +3,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+ 
 
 }
 
 
 body {
 
-/*     overflow-y: hidden; */
-    color: #ffffff;
+
+    overflow-y:     hidden !important;
+    color: #005EA1;
   
 }
 
@@ -21,8 +23,8 @@ header {
     padding-top: 2%;
     width: 100%;
     height: 571px;
-    background-image: linear-gradient(to bottom, #0379CE,75%, white );
-    /* background-color: #0379CE; */
+ /*    background-image: linear-gradient(to bottom, #0379CE,75%, white );
+  */   /* background-color: #0379CE; */
  
 }
 
@@ -30,7 +32,8 @@ header {
 
 .title h3{
 
-    color: white;
+    color:  #005EA1;
+  
     margin-top: 2%;
     font-weight: 400;
     opacity: 0.8;
@@ -62,7 +65,8 @@ header {
 }
  */
 .logo{
-    filter: drop-shadow(0px 0px 15px rgb(0, 225, 255));
+    /* filter: drop-shadow(0px 0px 15px rgb(0, 225, 255)); */
+    
 }
 
 
@@ -72,7 +76,7 @@ header {
 header img {
 
 
-    width: 350px;
+    width: 380px;
     height: 88px;
 
   
@@ -80,7 +84,8 @@ header img {
 }
 
 h1 {
-    color: #ffffff;
+    color:  #005EA1;
+  
 
     text-align: center;
     font-weight: 1000;
@@ -103,7 +108,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: end;
-
+    padding-bottom: 2%;
 
     height: 600px;
 }
@@ -193,6 +198,7 @@ a:hover{
 
 
 
+
 .bg1 {
 
     background-color: #0094FF;
@@ -201,6 +207,33 @@ a:hover{
 .bg2 {
     background-color: #005EA1;
 }
+
+
+
+
+
+.bg-fundo img{
+
+    position:absolute;
+    z-index: -1;
+    bottom: -30%;
+    width:100%; height:50rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width:700px) {
@@ -253,6 +286,7 @@ a:hover{
         display: flex;
         flex-direction: row;
         align-items: center;
+        padding-right: 2%;
 
 /*         padding: 5% 0;
         width: 100%;
@@ -274,7 +308,7 @@ a:hover{
 
     width: 15%;
        height: 35%;
-  padding-left: 2%; 
+      padding-left: 2%; 
      /*    margin-right: 5%;
         margin-top: 5%; */ 
  
@@ -297,12 +331,15 @@ a:hover{
 
     }
 
+ 
+    .bg-fundo img{
 
-    .nurse{
-        display: none;
-        opacity: 0.8;
+
+        width: 45rem;
+
     }
+    
 
- */
+ 
     
 }
