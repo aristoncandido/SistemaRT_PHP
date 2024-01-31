@@ -12,8 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function filtro() {
     var op = select.options[select.selectedIndex].value;
 
-    if (pesquisa.value != "") {
+    if (pesquisa.value != ""  && op !="Selecione") {
       switch (op) {
+
+
+       
+
+
+
+
         case "nome": ///caso seja um fitro em NOME
           if (
             typeof pesquisa.value === "string" &&
@@ -77,11 +84,18 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           break;
 
+    
+
         default:
           alert("Valor não encontrado tente um dos tipos de busca abaixo");
+
+
+
+
+
       }
     } else {
-      alert("Digite algum valor na barra de pesquisa");
+      alert("Digite algum valor na barra de pesquisa ou verifique o filtro selecionado");
     }
   }
 });

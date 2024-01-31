@@ -1,164 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestão de RT / COREN-PE</title>
-    <style type="text/css">
-        <!--
-        .style18 {
-            font-size: 24px;
+    <link rel="stylesheet" href="manager.css">
+    <style>
+        body {
+            background-color: #0667B3;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .table-header {
             font-weight: bold;
-            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+            background-color: #0667B3;
             color: #FFFFFF;
         }
 
-        .style23 {
-            font-size: 19px
+        .table-data {
+            text-align: center;
+            padding: 5px;
         }
 
-        body {
-            background-color: #0667B3;
-        }
-
-        .style24 {
-            font-family: "Times New Roman", Times, serif;
-            font-weight: bold;
-        }
-
-        .style25 {
+        .result-info {
             font-size: 14px;
-            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
         }
 
-        .style17 {
-            font-family: Arial, Helvetica, sans-serif;
+        .footer {
             font-size: 12px;
-            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .style19 {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
+        .footer a {
+            color: #000000;
+            text-decoration: none;
         }
-
-        -->
     </style>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body>
-    <table width="60%" height="50%" border="0" align="center" valign="middle" bgcolor="#FFFFFF">
-        <tr>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td align="center" valign="top"><div align="center"></div></td>
-        </tr>
-        <tr>
-            <td height="237" align="center" valign="top" bgcolor="#F4F4F4"><div align="center">
-                    <table width="90%" border="1" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td bgcolor="#0667B3"><div align="center" class="style18">Lista de Usuários </div></td>
-                        </tr>
-                        <tr></tr>
-                    </table>
 
-                    <?php
-                    // Inicie a sessão no início do arquivo
-                    session_start();
-                    
-                    // Verifique se o usuário está autenticado
-                    if (!isset($_SESSION['usuario_id'])) {
-                        // Se não estiver autenticado, redirecione para a página de login
-                        header("Location: dados.php");
-                        exit();
-                    }
-                    
-                    // Agora você pode usar as informações do usuário (por exemplo, exibir o nome do usuário)
-                    $nome_usuario = $_SESSION['usuario_nome'];
-                    
-                    echo "<p>&nbsp;</p>";
-                    echo "Olá, $nome_usuario";
-                    echo '<p><a href="cadastrar.php">Cadastrar Novo Usuário </a></p>';
-                    echo "<p>&nbsp;</p>";
-                    echo "<h2>Resultados da Consulta</h2>";
-                    echo "<p class='result-info'>Clique no requerimento desejado para visualizar os detalhes.</p>";
-               
+    <?php include "header.php"; ?>
 
-                    try {
-                        
-                        include('conexao.php');
+    <div class="container">
+        <?php
+        session_start();
 
-                        if ($conn->connect_error) {
-                            echo "Erro na conexão com o banco de dados: " . $conn->connect_error;
-                            throw new Exception("Erro na conexão com o banco de dados: " . $conn->connect_error);
-                        }
+        if (!isset($_SESSION['usuario_id'])) {
+            header("Location: dados.php");
+            exit();
+        }
 
-                        $sql1 = "SELECT ID, NOME, EMAIL, DEPARTAMENTO, TIPO_DE_PERFIL FROM user order by NOME asc";
-     
-                        $conn = new mysqli($servername, $username, $password, $database);
-                        if ($conn->connect_error) {
-                            die("Falha na conexão: " . $conn->connect_error);
-                        }
-                
-                        $resultado = $conn->query($sql1);
-                       
-                        $stmt = $conn->prepare($sql1);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
+        $nome_usuario = $_SESSION['usuario_nome'];
 
-                        if ($result->num_rows > 0) {
-                            $registros = $result->fetch_all(MYSQLI_ASSOC);
+        echo "<p>Olá, $nome_usuario</p>";
+        echo '<p><a href="cadastrar.php">Cadastrar Novo Usuário</a></p>';
+        echo "<h2>Resultados da Consulta</h2>";
+        echo "<p class='result-info'>Clique no requerimento desejado para visualizar os detalhes.</p>";
 
-                            echo '<table width="90%" border="1" cellspacing="0" cellpadding="2">';
-                            echo '<td class="table-header"><div align="center">Nome</div></td>';
-                            echo '<td class="table-header"><div align="center">E-mail</div></td>';
-                            echo '<td class="table-header"><div align="center">Departamento</div></td>';
-                            echo '<td class="table-header"><div align="center">Tipo de Perfil</div></td>';
-                            echo '<td class="table-header"><div align="center">*</div></td>';
-                            echo '<td class="table-header"><div align="center">*</div></td>';
-                            echo '<td class="table-header"><div align="center">*</div></td>';
-                            
+        try {
+            include 'conexao.php';
 
-                            foreach ($registros as $registro) {
-                                echo "<tr>";
-                                echo "<td class='table-data'>{$registro['NOME']}</td>";
-                                echo "<td class='table-data'>{$registro['EMAIL']}</td>";
-                                $departamento = $registro['DEPARTAMENTO'];
-                                $ID = $registro['ID'];
-                                echo "<td class='table-data'>{$departamento}</td>";
-                                echo "<td class='table-data'>{$registro['TIPO_DE_PERFIL']}</td>";
-                                echo "<td class='table-data'><div align='center'><a href='alterar_usuario.php?ID=$ID'>Alterar</a></div></td>";
-                                echo "<td class='table-data'><div align='center'><a href='alterar_usuario.php?ID=$ID'>Inativar</a></div></td>";
-                                echo "<td class='table-data'><div align='center'><a href='deletar_usuario.php?ID=$ID'>Excluir</a></div></td>";
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                        } else {
-                            echo "Nenhum usuário cadastrado.";
-                        }
+            if ($conn->connect_error) {
+                throw new Exception("Erro na conexão com o banco de dados: " . $conn->connect_error);
+            }
 
-                        $stmt->close();
-                        $conn->close();
-                        
-                    } catch (Exception $e) {
-                        echo "Erro: " . $e->getMessage();
-                    }
-                    ?>
+            $sql1 = "SELECT ID, NOME, EMAIL, DEPARTAMENTO, TIPO_DE_PERFIL FROM user ORDER BY NOME ASC";
 
-                </div>
-            </td>
-        </tr>
-        <tr>
-                <td align="center" valign="top" bgcolor="#F4F4F4">
-                    <span class="style19">Versão 1.0.0 / 2024<br>
-                    Conselho Regional de Enfermagem de Pernambuco<br>
-                    Departamento de Tecnologia da Informação<br>
-                    Todos os Direitos Reservados</span></td>
-                    <p><a href="manager.php">Voltar</a></p>
-        </tr>
-    </table>
+            $stmt = $conn->prepare($sql1);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $registros = $result->fetch_all(MYSQLI_ASSOC);
+
+                echo '<table width="90%" border="1" cellspacing="0" cellpadding="2">';
+                echo '<tr>';
+                echo '<td class="table-header">Nome</td>';
+                echo '<td class="table-header">E-mail</td>';
+                echo '<td class="table-header">Departamento</td>';
+                echo '<td class="table-header">Tipo de Perfil</td>';
+                echo '<td class="table-header">*</td>';
+                echo '<td class="table-header">*</td>';
+                echo '<td class="table-header">*</td>';
+                echo '</tr>';
+
+                foreach ($registros as $registro) {
+                    echo "<tr>";
+                    echo "<td class='table-data'>{$registro['NOME']}</td>";
+                    echo "<td class='table-data'>{$registro['EMAIL']}</td>";
+                    $departamento = $registro['DEPARTAMENTO'];
+                    $ID = $registro['ID'];
+                    echo "<td class='table-data'>$departamento</td>";
+                    echo "<td class='table-data'>{$registro['TIPO_DE_PERFIL']}</td>";
+                    echo "<td class='table-data'><a href='alterar_usuario.php?ID=$ID'>Alterar</a></td>";
+                    echo "<td class='table-data'><a href='alterar_usuario.php?ID=$ID'>Inativar</a></td>";
+                    echo "<td class='table-data'><a href='deletar_usuario.php?ID=$ID'>Excluir</a></td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "Nenhum usuário cadastrado.";
+            }
+
+            $stmt->close();
+            $conn->close();
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
+        }
+        ?>
+
+        <div class="footer">
+            <p>Versão 1.0.0 / 2024<br>
+                Conselho Regional de Enfermagem de Pernambuco<br>
+                Departamento de Tecnologia da Informação<br>
+                Todos os Direitos Reservados</p>
+            <p><a href="manager.php">Voltar</a></p>
+        </div>
+    </div>
+
 </body>
 
 </html>

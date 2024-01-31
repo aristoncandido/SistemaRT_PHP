@@ -1,57 +1,114 @@
 *{
 
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins';
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
 
 }
 
 
 
 body{
-    background:#005EA1;
-    overflow-x:hidden;
-    width: 100%;
-    height: 100vh;
+  background:#ffffff;
+  overflow-x:hidden;
+  width: 100%;
+  height: 100vh;
+ 
+ 
 
 
 
 
 }
 
-  .conteiner{
 
-       
-        width: 100%;
-        height: 100%;
-        display: block;
 
-    }
 
+
+
+
+
+
+.conteiner{
+
+     
+      width: 100%;
+      height: 100%;
+      display: block;
+
+  }
+main{
+
+
+  display:flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  
+  background-color: rgba(128, 128, 128, 0.185);;
+
+
+
+}
 
 header{
 
 
-    width:100%;
-    background:#001757;
-    display:flex;
-    height: 20%;
-    justify-content: space-evenly;
-    color: white;
-    margin-bottom: 2%;
+  width:100%;
+  background:#3399ff;
 
-    
+  height: 18%;
 
+  color: white;
+
+
+  
+
+}
+
+#menu{
+  width:46px;
+  height:46px;
+  margin-left: 2%;
+
+}
+
+#menu:hover{
+
+  cursor: pointer;
+
+
+}
+
+.head{
+  width:100%;
+  padding-top: 2%;
+}
+
+
+#btn-pesquisa{
+ 
+  width:38px;
+  font-weight: bolder;
+  height:38px;
+
+  box-shadow: inset 0 0 0 0 #3399ff;
+}
+#btn-pesquisa:hover{
+  cursor: pointer;
 }
 
 
 
 header div {
 
-    display:flex;
-    justify-content:center;
-    align-items: center;
+  display:flex;
+  justify-content:center;
+  align-items: center;
 
 }
 
@@ -59,51 +116,63 @@ header div {
 
 
 header div h1{
-    color: white;
-    
+  color: white;
+  
 }
 
 h2{
-    font-size:20pt;
+  font-size:20pt;
 }
 
 h1{
-    color:white;
+  color:white;
 }
 
 
-button {
-    color: #001c79;
-    min-height: 80px;
-    width: 160px;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    cursor: pointer;
-    border: 1px solid #e8e8e81c;
-    transition: all 0.3s;
-  }
-  
-  button:hover {
-    border: 1px solid white;
-  }
-  
-  button:active {
-    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
-  }
-  
+/* button {
+position: relative;
+display: inline-block;
+
+padding: 15px 30px;
+text-align: center;
+font-size: 18px;
+letter-spacing: 1px;
+text-decoration: none;
+color: #3399ff;
+background: transparent;
+cursor: pointer;
+transition: ease-out 0.5s;
+border: 2px solid #3399ff;
+border-radius: 10px;
+width: 15rem;
+box-shadow: inset 0 0 0 0 #3399ff;
+} */
+
+/* button:hover {
+color: white;
+box-shadow: inset 0 -100px 0 0 #3399ff;
+}
+
+button:active {
+transform: scale(0.9);
+}
+ */
+
+
+
+ 
 
 
 label{
 
-    color:white;
-    margin-right: 2%;
-    padding-top: 2px;
+  color:white;
+  margin-right: 2%;
+  padding-top: 2px;
 }
 
 .logout{
 
-    width:5%;
+  width:5%;
 
 
 }
@@ -112,62 +181,231 @@ label{
 .block-left{
 
 display: flex;
-width: 100%;
-justify-content: space-around;
+width: 50%;
+height: 100%;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+.block-right{
+
+  
+display: flex;
+width: 50%;
+justify-content: end;
+height: 100%;
+padding-right: 2%;
+}
+
+
+.pesquisar{
+
+  height: 3.5rem;
+
 }
 
 
 
 .card{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 svg{
 
-    width: 128px;
-    height: 128px;
-    margin-bottom: 5%;
+
+  width: 128px;
+  height: 128px;
+  margin-bottom: 5%;
+
+
+}
+svg #menu-icon{
+  width: 64px;
+  height: 64px;
 }
 
 
+.button-container {
+  display: flex;
+
+  background-color:#1f74ca;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;  
+
+  border-top: 1px solid white;
+  transition: 0.8s;
+
+ 
+
+/*   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    rgba(27, 133, 219, 0.5) 5px 10px 15px; */
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+
+
+.op-menu{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+.bg-fundo{
+  width:100%;
+  background-image: url("../IMGS/blue.png");
+  background-position: center;
+  height: 10%;
+
+}
+
+
+
+body {
+  /*  overflow-y: hidden; */
+}
+
+#logo{
+  width: 380px;
+
+
+}
+
+.logout {}
+
+
+
+
+.bg-fundo img {
+
+  position: absolute;
+  z-index: -1;
+  bottom: -30%;
+  width: 100%;
+  height: 50rem;
+
+}
+
+h1 {
+  position: relative;
+  color: blue;
+ 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pesquisa {
-    max-width: 190px;
-    background-color: #f5f5f5;
-    color: #242424;
-    padding: .15rem .5rem;
-    min-height: 40px;
+  width: 40rem;
+/*   max-width: 200px; */
+
+
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+  color: black;
+  font-weight: bolder;
+  margin-right: 2%;
+  font-size:larger ;
+
+
+}
+
+#pesquisa:focus {
+
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+
+}
+
+#pesquisa:hover {
+
+       outline: 1px solid lightgrey;
+
+}
+
+select{
+
     border-radius: 4px;
-    outline: none;
-    border: none;
-    line-height: 1.15;
-    box-shadow: 0px 10px 20px -18px;
-  }
-  
-  #pesquisa:focus {
-    border-bottom: 2px solid #5b5fc7;
-    border-radius: 4px 4px 2px 2px;
-  }
-  
-  #pesquisa:hover {
-    outline: 1px solid lightgrey;
-  }
-
-  select{
-    border-radius: 4px;
     min-height: 40px;
+    font-weight: bolder;
+    padding-left: 1%;
+    padding-right:1% ;
 
-  }
+    font-size:larger ;
 
-
-  .btn-pesquisa{
-
-    min-height: 40px;
-    width: 100px;
-    font-size: medium;
-    text-align: center;
-    border-radius: 4px;
+}
 
 
-  }
+.btn-pesquisa{
+
+      min-height: 40px;
+      width: 60px;
+      font-size:larger ;
+
+      text-align: center;
+      border-radius: 4px;
+      padding: 0;
+
+      padding-top: 0.5%;
+      background-color: #3399ff;
+      color: #ffffff;
+      margin-left: 1%;
+      font-weight: bolder;
+      border: none;
+
+}
+
+.btn-pesquisa:hover{
+  background-color: #012549;
+}
