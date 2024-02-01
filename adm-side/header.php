@@ -12,6 +12,15 @@
     <title>Header</title>
 </head>
 
+<style>
+
+        #logo{
+        width: 380px;
+        }
+
+
+</style>
+
 <body>
 
     <div class="conteiner-top">

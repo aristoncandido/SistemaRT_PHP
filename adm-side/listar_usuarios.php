@@ -24,7 +24,7 @@
         .table-header {
             font-weight: bold;
             text-align: center;
-            background-color: #0667B3;
+            background-color: #1f74ca;
             color: #FFFFFF;
         }
 
@@ -42,12 +42,38 @@
             font-size: 12px;
             text-align: center;
             margin-top: 20px;
+            width:100%;
         }
 
         .footer a {
             color: #000000;
             text-decoration: none;
         }
+        a{
+            text-decoration:none;
+            color:#3399ff;
+        }
+        
+        h2{
+            text-align:center;
+        }
+        
+        .result-info{
+            text-align:center;
+        }
+        
+        
+        .back{
+            font-size:1rem;
+            color:#3399ff;
+            position:relative;
+            left:-50%;
+            
+        }
+        
+        
+        
+        
     </style>
 </head>
 
@@ -57,6 +83,8 @@
 
     <div class="container">
         <?php
+        
+       
         session_start();
 
         if (!isset($_SESSION['usuario_id'])) {
@@ -66,10 +94,12 @@
 
         $nome_usuario = $_SESSION['usuario_nome'];
 
+    
         echo "<p>Olá, $nome_usuario</p>";
         echo '<p><a href="cadastrar.php">Cadastrar Novo Usuário</a></p>';
         echo "<h2>Resultados da Consulta</h2>";
-        echo "<p class='result-info'>Clique no requerimento desejado para visualizar os detalhes.</p>";
+        echo "<p class='result-info'>Clique no usuário desejado para visualizar os detalhes.</p>";
+        echo "<br>";
 
         try {
             include 'conexao.php';
@@ -124,11 +154,11 @@
         ?>
 
         <div class="footer">
-            <p>Versão 1.0.0 / 2024<br>
+            <p>Versão 1.0.1 / 2024<br>
                 Conselho Regional de Enfermagem de Pernambuco<br>
                 Departamento de Tecnologia da Informação<br>
                 Todos os Direitos Reservados</p>
-            <p><a href="manager.php">Voltar</a></p>
+            <p class="back" ><a  href="manager.php">Voltar</a></p>
         </div>
     </div>
 

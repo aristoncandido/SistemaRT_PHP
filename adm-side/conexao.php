@@ -2,16 +2,16 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "sistema_rt";
+$database = "coren341_sistemacorenpegeral";
 
-// Cria uma conexão
+// Cria uma conex達o
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Verifica a conexão
+// Verifica a conex達o
 if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    die("Conex達o falhou: " . $conn->connect_error);
 }
-/* echo "Conexão bem-sucedida"; */
+/* echo "Conex達o bem-sucedida"; */
 ?>
 
 
